@@ -1,11 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  it 'validates presence of title' do
-    expect(Question.new(description: 'test description')).to_not be_valid
+
+  describe 'validations' do
+    it { should validate_presence_of :title }
+    it { should validate_presence_of :description }
   end
-  it 'validates presence of description' do
-    expect(Question.new(title: 'test title')).to_not be_valid
+
+  describe 'relations'  do
+    it { should have_many(:answers) }
   end
 
 end
