@@ -1,5 +1,3 @@
-require 'shoulda-matchers'
-
 require "bundler/setup"
 ::Bundler.require(:default, :test)
 
